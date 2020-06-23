@@ -20,7 +20,6 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-e2e-nightwatch": "~4.4.0",
-    "@vue/cli-plugin-eslint": "~4.4.0",
     "@vue/cli-plugin-pwa": "~4.4.0",
     "@vue/cli-plugin-router": "~4.4.0",
     "@vue/cli-plugin-unit-mocha": "~4.4.0",
@@ -41,7 +40,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
-    "root": true,
+    "root": false,
     "env": {
       "node": true
     },

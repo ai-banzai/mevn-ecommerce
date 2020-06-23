@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    {{info}}
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -52,7 +51,7 @@ export default {
   mounted() {
     axios
       .get('http://localhost:8081/posts')
-      .then((response) => (this.info = response));
+      .then((response) => (this.info = response.data));
   },
 };
 </script>
