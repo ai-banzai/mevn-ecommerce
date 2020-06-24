@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '@/views/Home.vue';
 import Posts from '@/components/Posts.vue';
 import NewPost from '@/components/NewPost.vue';
+import EditPost from '@/components/EditPost.vue';
 
 Vue.use(VueRouter);
 
@@ -29,6 +30,11 @@ const routes = [
     path: '/posts/new',
     name: 'NewPost',
     component: NewPost,
+  },
+  {
+    path: '/posts/:id',
+    name: 'EditPost',
+    component: EditPost
   },
 ];
 
