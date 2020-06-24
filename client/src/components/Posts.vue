@@ -1,4 +1,3 @@
-/* eslint-disable */
 <template>
   <div class="posts">
     <h1>Posts</h1>
@@ -16,9 +15,8 @@
           <td>{{ post.title }}</td>
           <td>{{ post.description }}</td>
           <td align="center">
-            <router-link v-bind:to="{ name: 'EditPost', params: { id: post._id } }"> 
-            Edit</router-link> | 
-            <a href="#">Delete</a>
+            <router-link v-bind:to="{ name: 'EditPost', params: { id: post._id } }">Edit</router-link> |
+            <a href="#" @click="deletePost(post._id)">Delete</a>
           </td>
         </tr>
       </table>
@@ -31,25 +29,28 @@
 </template>
 
 <script>
-import PostsService from '@/services/PostsService';
-
+import PostsService from '@/services/PostsService'
 export default {
   name: 'posts',
-  data() {
+  data () {
     return {
-      posts: [],
-    };
+      posts: []
+    }
   },
-  mounted() {
-    this.getPosts();
+  mounted () {
+    this.getPosts()
   },
   methods: {
-    async getPosts() {
-      const response = await PostsService.fetchPosts();
-      this.posts = response.data.posts;
+    async getPosts () {
+      const response = await PostsService.fetchPosts()
+      this.posts = response.data.posts
     },
-  },
-};
+    async deletePost (id) {
+      await PostsService.deletePost(id)
+      this.$router.push({ name: 'Posts' })
+    }
+  }
+}
 </script>
 <style type="text/css">
 .table-wrap {
@@ -86,4 +87,3 @@ a.add_post_link {
   font-weight: bold;
 }
 </style>
-/* eslint-disable */
