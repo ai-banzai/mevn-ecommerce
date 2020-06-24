@@ -34,7 +34,7 @@ export default {
   name: 'posts',
   data () {
     return {
-      posts: []
+      posts: [],
     }
   },
   mounted () {
@@ -47,7 +47,8 @@ export default {
     },
     async deletePost (id) {
       await PostsService.deletePost(id)
-      this.$router.push({ name: 'Posts' })
+      const response = await PostsService.fetchPosts()
+      this.posts = response.data.posts
     }
   }
 }
