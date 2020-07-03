@@ -4,6 +4,9 @@ import Home from '@/views/Home.vue';
 import Posts from '@/components/Posts.vue';
 import NewPost from '@/components/NewPost.vue';
 import EditPost from '@/components/EditPost.vue';
+import Products from '@/components/Products.vue';
+import NewProduct from '@/components/NewProduct.vue';
+import EditProduct from '@/components/EditProduct.vue';
 
 Vue.use(VueRouter);
 
@@ -34,7 +37,22 @@ const routes = [
   {
     path: '/posts/:id',
     name: 'EditPost',
-    component: EditPost
+    component: EditPost,
+  },
+  {
+    path: '/products',
+    name: 'Products',
+    component: Products,
+  },
+  {
+    path: '/products/new',
+    name: 'NewProduct',
+    component: NewProduct,
+  },
+  {
+    path: '/products/:id',
+    name: 'EditProduct',
+    component: EditProduct,
   },
 ];
 
